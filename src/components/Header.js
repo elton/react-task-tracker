@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types';
+import Button from './Button';
 
 const Header = ({ title }) => {
+  const onClick = (e) => {
+    console.log(e);
+  };
   return (
-    <header>
+    <header className='flex justify-between items-center mb-5'>
       <h1>{title}</h1>
+      <Button color='cyan' text='Add' onClick={onClick} />
     </header>
   );
 };
