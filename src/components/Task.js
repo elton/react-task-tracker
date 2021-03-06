@@ -1,7 +1,10 @@
 import { FaTimes } from 'react-icons/fa';
 const Task = ({ task, onDelete }) => {
   return (
-    <div className='bg-gray-100 m-1 px-5 py-1 cursor-pointer'>
+    <div
+      className={`bg-gray-100 m-1 px-5 py-1 cursor-pointer ${
+        task.reminder ? 'border-l-2 border-green-800' : ''
+      }`}>
       <h3 className='flex items-center justify-between'>
         {task.text}
         <FaTimes

@@ -13,7 +13,7 @@ const App = () => {
       id: 2,
       text: 'Meeting at School',
       day: 'Feb 6th at 1:30pm',
-      reminder: true,
+      reminder: false,
     },
   ]);
 
@@ -26,7 +26,11 @@ const App = () => {
   return (
     <div className='max-w-lg my-8 mx-5 overflow-auto min-h-full border-cyan-600 border rounded p-8'>
       <Header />
-      <Task tasks={tasks} onDelete={deleteTask} />
+      {tasks.length > 0 ? (
+        <Task tasks={tasks} onDelete={deleteTask} />
+      ) : (
+        'No tasks to show.'
+      )}
     </div>
   );
 };
