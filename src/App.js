@@ -16,10 +16,17 @@ const App = () => {
       reminder: true,
     },
   ]);
+
+  // Delete a task
+
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
   return (
     <div className='max-w-lg my-8 mx-5 overflow-auto min-h-full border-cyan-600 border rounded p-8'>
       <Header />
-      <Task tasks={tasks} />
+      <Task tasks={tasks} onDelete={deleteTask} />
     </div>
   );
 };
