@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Header';
-import Task from './components/Tasks';
+import Tasks from './components/Tasks';
 const App = () => {
   const [tasks, setTasks] = useState([
     {
@@ -23,11 +23,20 @@ const App = () => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
+  // Toggle Reminder
+  const toggleReminder = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, reminder: !task.reminder } : task
+      )
+    );
+  };
+
   return (
     <div className='max-w-lg my-8 mx-5 overflow-auto min-h-full border-cyan-600 border rounded p-8'>
       <Header />
       {tasks.length > 0 ? (
-        <Task tasks={tasks} onDelete={deleteTask} />
+        <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
       ) : (
         'No tasks to show.'
       )}
