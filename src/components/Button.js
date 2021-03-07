@@ -4,12 +4,8 @@ const Button = ({ color, text, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={
-        'bg-' +
-        color +
-        '-500 ' +
-        'inline-block text-white border-none rounded cursor-pointer no-underline text-sm py-2 px-5 m-1 focus:outline-none'
-      }>
+      className={`
+        bg-${color}-700 inline-block text-white border-none rounded cursor-pointer no-underline text-sm py-2 px-5 m-1 focus:outline-none`}>
       {text}
     </button>
   );
