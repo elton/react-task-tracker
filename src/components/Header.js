@@ -5,11 +5,7 @@ const Header = ({ title, onAdd, showAdd }) => {
   return (
     <header className='flex justify-between items-center mb-5'>
       <h1 className='text-2xl text-cyan-900 font-semibold'>{title}</h1>
-      <Button
-        color={showAdd ? 'red' : 'cyan'}
-        text={showAdd ? 'Close' : 'Add'}
-        onClick={onAdd}
-      />
+      <Button color='cyan' text={showAdd ? 'Close' : 'Add'} onClick={onAdd} />
     </header>
   );
 };
